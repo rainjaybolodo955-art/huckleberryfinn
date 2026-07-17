@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Literary Journey of Huckleberry Finn</title>
+    <!-- Google Fonts for Vintage Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Faustina:ital,wght@0,500;0,700;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Vintage Paper Overlay Texture -->
+    <div class="vintage-overlay"></div>
+
+    <div class="app-layout">
+        <!-- LEFT: Clean Map Section -->
+        <section class="map-section">
+            
+            <!-- Dark Elegant Header Banner -->
+            <header class="header-banner">
+                <h1>The Literary Journey of Huckleberry Finn</h1>
+                <p>Explore all 9 major locations from the novel. Click any marker or the blue Mississippi river channel!</p>
+            </header>
+
+            <!-- Map Container -->
+            <div class="map-container">
+                <!-- SVG Vector River Route with Flowing Dash Animation -->
+                <svg class="river-svg" viewBox="0 0 1000 450" preserveAspectRatio="none">
+                    <!-- Solid River Blue Channel -->
+                    <path id="riverTrigger" class="river-bg" d="M 50,110 C 150,90 200,160 250,140 C 320,110 350,210 400,210 C 450,210 450,250 500,290 C 550,330 550,400 650,400 C 720,400 800,320 900,320" data-index="10" />
+                    <!-- Flowing Dashed Overlay -->
+                    <path class="river-dash" d="M 50,110 C 150,90 200,160 250,140 C 320,110 350,210 400,210 C 450,210 450,250 500,290 C 550,330 550,400 650,400 C 720,400 800,320 900,320" pointer-events="none" />
+                </svg>
+
+                <!-- Map Markers -->
+                <div class="node-group marker" style="left: 7.5%; top: 25%;" data-index="0">
+                    <div class="marker-ring"><div class="marker-dot"></div></div>
+                    <div class="node-label">1. Pike County, MO</div>
+                </div>
+
+                <div class="node-group marker" style="left: 16%; top: 21%;" data-index="1">
+                    <div class="marker-ring"><div class="marker-dot"></div></div>
+                    <div class="node-label">2. St. Petersburg</div>
+                </div>
+
+                <div class="node-group marker" style="left: 23.5%; top: 29%;" data-index="2">
+                    <div class="marker-ring"><div class="marker-dot"></div></div>
+                    <div class="node-label">3. Jackson's Island</div>
+                </div>
+
+                <div class="node-group marker" style="left: 39%; top: 44%;" data-index="3">
+                    <div class="marker-ring"><div class="marker-dot"></div></div>
+                    <div class="node-label">4. Cairo, IL</div>
+                </div>
+
+                <div class="node-group marker" style="left: 47%; top: 54%;" data-index="4">
+                    <div class="marker-ring"><div class="marker-dot"></div></div>
+                    <div class="node-label">5. Grangerford Farm</div>
+                </div>
+
+                <div class="node-group marker" style="left: 53.5%; top: 74%;" data-index="5">
+                    <div class="marker-ring"><div class="marker-dot"></div></div>
+                    <div class="node-label">6. Pokeville Camp</div>
+                </div>
+
+                <div class="node-group marker" style="left: 61.5%; top: 86%;" data-index="6">
+                    <div class="marker-ring"><div class="marker-dot"></div></div>
+                    <div class="node-label">7. Bricksville, AR</div>
+                </div>
+
+                <div class="node-group marker" style="left: 73%; top: 81%;" data-index="7">
+                    <div class="marker-ring"><div class="marker-dot"></div></div>
+                    <div class="node-label">8. Wilks Estate</div>
+                </div>
+
+                <div class="node-group marker" style="left: 86.5%; top: 70%;" data-index="8">
+                    <div class="marker-ring"><div class="marker-dot"></div></div>
+                    <div class="node-label">9. Pikesville (Phelps Farm)</div>
+                </div>
+
+                <!-- Hidden Node for River Click Handler -->
+                <div id="riverLabelTrigger" class="river-text-label" data-index="9">
+                    The Mississippi River (Click River Channel)
+                </div>
+
+                <!-- Vintage Compass Rose -->
+                <svg class="compass" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="#a48d75" stroke-width="1"/>
+                    <line x1="50" y1="10" x2="50" y2="90" stroke="#a48d75" stroke-width="0.5"/>
+                    <line x1="10" y1="50" x2="90" y2="50" stroke="#a48d75" stroke-width="0.5"/>
+                    <polygon points="50,50 46,50 50,15" fill="#8b1e15"/>
+                    <polygon points="50,50 54,50 50,15" fill="#c44d42"/>
+                    <polygon points="50,50 46,50 50,85" fill="#7d603f"/>
+                    <polygon points="50,50 54,50 50,85" fill="#a88c6b"/>
+                    <text x="46" y="12" font-size="10" font-weight="bold" fill="#1c140c">N</text>
+                </svg>
+            </div>
+
+            <!-- Group Credits at the Bottom Left -->
+            <div class="group-credits">
+                <span class="group-title">Group 2</span>
+                <span class="member">Rain Jay Bolodo</span>
+                <span class="member">Marjhon Ogatis</span>
+                <span class="member">Sheng Arquero</span>
+                <span class="member">Macayle Oledan</span>
+                <span class="member">Stella Dawn Tinoy</span>
+            </div>
+        </section>
+
+        <!-- RIGHT: Interactive Sliding Panel -->
+        <aside class="details-panel" id="detailsPanel">
+            <button class="close-btn" id="closeBtn" aria-label="Close panel">&times;</button>
+            <div class="panel-content">
+                <div class="image-frame">
+                    <img id="locationImage" src="" alt="Location Image">
+                </div>
+                <h2 id="locationTitle" class="location-title">Location Name</h2>
+                <div class="meta-tag" id="locationTag">Region</div>
+
+                <div class="info-block">
+                    <h3>Narration</h3>
+                    <ul id="narrationList"></ul>
+                </div>
+
+                <div class="info-block">
+                    <h3>Historical Significance</h3>
+                    <ul id="significanceList"></ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
